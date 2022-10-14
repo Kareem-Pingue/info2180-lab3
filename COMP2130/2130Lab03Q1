@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+int main(int argc, char *argv[]) {
+
+  float a[2][3], b[3][2], c[2][2];
+  int d, e;
+
+  float prim_val;
+  float val2 = 0;
+  float val3 = 0;
+
+  printf("\n1st Matrix\n");
+  // Array @ 0; less than 2; dncrement
+  for (d = 0; d < 2; d++) {
+    printf("Row 1 Elements %d\n", d + 1);
+    for (e = 0; e < 3; e++) {
+      printf("Enter Culomn %d Value:  \n", e + 1);
+      scanf("%f", &prim_val), a[d][e] = prim_val;
+    }
+  }
+  printf("\n2nd Matrix\n");
+  // Array @ 0; less than 2; dncrement
+  for (d = 0; d < 3; d++) {
+    printf("Row 1 Elements\n", d + 1);
+    for (e = 0; e < 3; e++) {
+      printf("Enter Culomn %d Value: \n", e + 1);
+      scanf("%f", &prim_val), b[d][e] = prim_val;
+    }
+  }
+  for (d=0; d<2; d++) {
+    for (e=0; e<3; e++) {
+      val2 = val2 + a[d][e]*b[d][e], val3 = val3 + a[d][e]*b[d][e];
+    }
+    c[d][0] = val2,  c[d][1] = val3;
+    val2, val3 = 0;
+  }
+  for (d=0; d<2; d++) {
+    for (e=0; e<2; e++)
+      printf("%.2f	", c[d][e]);
+    printf("\n");
+  }
+  return 0;
+}
